@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Policy Summarizer",
+  "version": "1.0",
+  "description": "Automatically extracts and summarizes website policies (T&C, Privacy, etc.) using Groq AI.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Policy Summarizer Settings"
+  }
+}
