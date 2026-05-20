@@ -29,6 +29,16 @@
   ],
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "Policy Summarizer Settings"
+    "default_title": "Policy Summarizer Settings",
+    "default_icon": {
+      "16": "images/logo_policy.png",
+      "24": "images/logo_policy.png",
+      "32": "images/logo_policy.png"
+    }
+  },
+  "icons": {
+    "16": "images/logo_policy.png",
+    "48": "images/logo_policy.png",
+    "128": "images/logo_policy.png"
   }
 }
