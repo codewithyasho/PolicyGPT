@@ -78,4 +78,34 @@ This is the mini-website that appears when you click the extension's puzzle-piec
 - **Want to add more keywords to scan for?**
   Open `content.js` and find the `findPolicyLinks()` function. You can add more words to the `keywords` array (like "cookie", "data", "eula").
 
+---
+
+## 🌐 Supported Browsers
+
+Because this extension uses the standard **Manifest V3** architecture, it is highly compatible with most modern web browsers:
+
+- **Google Chrome** (Native support)
+- **Microsoft Edge** (Native support)
+- **Brave Browser** (Native support)
+- **Opera / Vivaldi** (Native support)
+- **Mozilla Firefox** (Requires minor tweak in `manifest.json` for publishing, but works via `about:debugging` for local use).
+
+---
+
+## 📥 How to Install & Use (Developer Mode)
+
+Since this extension isn't published on the Chrome Web Store yet, you can easily load it directly from your computer:
+
+1. **Get your API Key:** Go to [console.groq.com](https://console.groq.com/keys) and generate a free API key.
+2. **Open your Browser's Extension Page:**
+   - In Chrome: Go to `chrome://extensions/`
+   - In Edge: Go to `edge://extensions/`
+   - In Brave: Go to `brave://extensions/`
+3. **Enable Developer Mode:** Find the "Developer mode" toggle (usually in the top right or left menu) and turn it ON.
+4. **Load the Extension:** Click the **"Load unpacked"** button.
+5. **Select the Folder:** Choose the folder containing this project's files (the folder containing `manifest.json`).
+6. **Set up the Key:** Click the extension's icon (puzzle piece) in your browser toolbar, paste your Groq API key, and click "Save Key".
+
+That's it! Visit any website like Amazon or a payment gateway, and the summarize button will appear!
+
 Enjoy building and modifying your AI extension!
