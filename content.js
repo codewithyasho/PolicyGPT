@@ -41,6 +41,26 @@ function createUI() {
   document.getElementById('ps-close-btn').addEventListener('click', () => {
     panel.classList.remove('ps-show');
   });
+
+  // Event Listeners
+
+btn.addEventListener('mouseenter', () => {
+  btn.classList.add('ps-active');
+});
+
+btn.addEventListener('mouseleave', () => {
+  if (!panel.classList.contains('ps-show')) {
+    btn.classList.remove('ps-active');
+  }
+});
+
+btn.addEventListener('click', handleSummarizeClick);
+
+document.getElementById('ps-close-btn').addEventListener('click', () => {
+  panel.classList.remove('ps-show');
+  btn.classList.remove('ps-active');
+});
+ 
 }
 
 async function handleSummarizeClick() {
@@ -50,6 +70,7 @@ async function handleSummarizeClick() {
 
   // Update UI state
   btn.classList.add('ps-loading');
+  btn.classList.add('ps-active');
   btn.querySelector('span').innerText = 'Scanning...';
   
   panel.classList.add('ps-show');
