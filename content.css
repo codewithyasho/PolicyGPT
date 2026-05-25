@@ -3,23 +3,48 @@
 /* Floating Trigger Button */
 #ps-trigger-btn {
   position: fixed;
-  bottom: 20px;
+  bottom: 40%; 
   right: 20px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+
+  background: rgba(107, 114, 128, 0.25); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 12px 24px;
+
+  padding: 12px 12px;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 600;
   font-size: 14px;
+
   cursor: pointer;
-  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
-  z-index: 2147483646; /* Max z-index - 1 */
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.2);
+
+  z-index: 2147483646;
+
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   align-items: center;
   gap: 8px;
+
+  overflow: hidden;
+}
+
+#ps-trigger-btn span {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+
+  transition:
+    max-width 0.35s ease,
+    opacity 0.25s ease,
+    margin 0.3s ease;
 }
 
 #ps-trigger-btn:hover {
@@ -36,7 +61,6 @@
   cursor: wait;
 }
 
-/* Summarization Panel */
 #ps-summary-panel {
   position: fixed;
   bottom: 80px;
@@ -187,4 +211,42 @@
 
 @keyframes ps-spin {
   to { transform: rotate(360deg); }
+}
+
+#ps-trigger-btn:hover span,
+#ps-trigger-btn.ps-active span {
+  max-width: 200px;
+  opacity: 1;
+  margin-left: 4px;
+}
+
+#ps-trigger-btn:hover,
+#ps-trigger-btn.ps-active {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  transform: translateY(-4px) scale(1.03);
+
+  box-shadow:
+    0 15px 30px rgba(34, 197, 94, 0.35);
+}
+
+#ps-trigger-btn:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+#ps-trigger-btn.ps-loading {
+  background: linear-gradient(135deg, #475569, #334155);
+  cursor: wait;
+}
+
+@media (max-width: 768px) {
+  #ps-trigger-btn {
+    bottom: 30px;
+    right: 15px;
+    padding: 11px 14px;
+  }
+
+  #ps-trigger-btn:hover span,
+  #ps-trigger-btn.ps-active span {
+    max-width: 140px;
+  }
 }
